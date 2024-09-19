@@ -27,10 +27,10 @@ function output(nameOfTask, results) {
 }
 
 function solve(a, xBegin, xEnd, xDelta, values) {
-  const taskAResult = taskA(1.6, 1.2, 3.7, 0.5);
+  const taskAResult = taskA(a, xBegin, xEnd, xDelta);
   output('A', taskAResult);
 
-  const taskBResult = taskB(1.6, values);
+  const taskBResult = taskB(a, values);
   output('B', taskBResult);
 }
 
