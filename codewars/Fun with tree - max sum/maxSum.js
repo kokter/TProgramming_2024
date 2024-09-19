@@ -8,25 +8,21 @@ class TreeNode {
 
 function maxSum(root) {
   if (root === null) {
-    return 0; // Если дерево пустое, возвращаем 0
+    return 0;
   }
 
-  // Внутренняя рекурсивная функция для нахождения максимальной суммы пути
   function dfs(node) {
     if (node === null) {
-      return Number.NEGATIVE_INFINITY; // Возвращаем отрицательную бесконечность для нетрадиционного случая
+      return Number.NEGATIVE_INFINITY;
     }
 
-    // Если узел является листом, возвращаем его значение
     if (node.left === null && node.right === null) {
       return node.value;
     }
 
-    // Рекурсивный вызов для левого и правого поддеревьев
     const leftSum = dfs(node.left);
     const rightSum = dfs(node.right);
 
-    // Возвращаем максимальную сумму пути от корня до листа
     return node.value + Math.max(leftSum, rightSum);
   }
 
