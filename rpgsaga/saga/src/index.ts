@@ -26,9 +26,12 @@ function output(nameOfTask, results) {
   }
 }
 
-const taskAResult = taskA(1.6, 1.2, 3.7, 0.5);
-output('A', taskAResult);
+function solve(a, xBegin, xEnd, xDelta, values) {
+  const taskAResult = taskA(1.6, 1.2, 3.7, 0.5);
+  output('A', taskAResult);
 
-const values = [1.28, 1.36, 2.47, 3.68, 4.56];
-const taskBResult = taskB(1.6, values);
-output('B', taskBResult);
+  const taskBResult = taskB(1.6, values);
+  output('B', taskBResult);
+}
+
+module.exports = solve;
