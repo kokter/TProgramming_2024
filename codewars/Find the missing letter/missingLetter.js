@@ -1,10 +1,9 @@
 function missingLetter(array) {
   for (let i = 0; i < array.length - 1; i++) {
-    const currChar = array[i].charCodeAt(0);
-    const nextChar = array[i + 1].charCodeAt(0);
-
-    if (nextChar !== currChar + 1) {
-      return String.fromCharCode(currChar + 1);
+    if (array[i + 1].charCodeAt(0) !== array[i].charCodeAt(0) + 1) {
+      return array[i + 1].charCodeAt(0) !== array[i].charCodeAt(0) + 1
+        ? String.fromCharCode(array[i].charCodeAt(0) + 1)
+        : null;
     }
   }
 }
