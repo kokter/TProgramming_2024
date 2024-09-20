@@ -1,0 +1,6 @@
+def deep_count(arr):
+    count = len(arr)
+    for element in arr:
+        if isinstance(element, list):
+            count += deep_count(element)
+    return count

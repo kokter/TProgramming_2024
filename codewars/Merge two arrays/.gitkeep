@@ -1,0 +1,19 @@
+function mergeArrays(a, b) {
+    const result = [];
+    const length1 = a.length;
+    const length2 = b.length;
+    const minLength = Math.min(length1, length2);
+
+    for (let i = 0; i < minLength; i++) {
+        result.push(a[i]);
+        result.push(b[i]);
+    }
+
+    if (length1 > minLength) {
+        result.push(...a.slice(minLength));
+    } else if (length2 > minLength) {
+        result.push(...b.slice(minLength));
+    }
+
+    return result;
+}
