@@ -1,0 +1,8 @@
+def find_missing_letter(chars):
+    slovo = []
+    for char in chars:
+        code = ord(char)
+        slovo.append(code)
+    for i in range(len(slovo)-1):
+        if slovo[i+1] - slovo[i] > 1:
+            return chr(slovo[i]+1)

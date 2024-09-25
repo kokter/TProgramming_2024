@@ -1,0 +1,8 @@
+def deep_count(l): 
+    count = len(l) 
+    for x in l: 
+        if isinstance(x, list): 
+            count += deep_count(x) 
+    return count
+
+

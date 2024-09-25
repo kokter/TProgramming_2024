@@ -1,0 +1,10 @@
+def tower_builder(n_floors):
+    tower = []
+    for i in range(n_floors):
+        zvezd = '*' * (i*2 + 1)
+        count = ' ' * (n_floors - i - 1)
+        floor = count + zvezd + count
+        tower.append(floor)
+        
+    return tower
+
