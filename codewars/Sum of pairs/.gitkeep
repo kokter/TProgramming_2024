@@ -1,0 +1,10 @@
+def sum_pairs(ints, s):
+    seen = {}
+    
+    for index, number in enumerate(ints):
+        complement = s - number
+        if complement in seen:
+            return [complement, number]
+        seen[number] = index
+    
+    return None
