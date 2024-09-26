@@ -1,14 +1,14 @@
 import { taskA, taskB } from '../src';
 
 describe('Tests taskA', () => {
-  it('should return 5 values', () => {
+  it('should return 6 values', () => {
     const result = [
       2.3468763792592435, 3.3909339083296413, 7.060456123895652, 20.274426487085844, 78.05794053292227,
       390.52739754985294,
     ];
     expect(taskA(1.6, 1.2, 3.7, 0.5)).toEqual(result);
   });
-  it('should return 5 values', () => {
+  it('should return 7 values', () => {
     const result = [
       Infinity,
       2.7797995726170024,
