@@ -1,0 +1,11 @@
+def pig_it(text):
+    words = text.split()
+    a = []
+    for i in words:
+        if i.isalpha():  
+           b = i[1:] + i[0] + 'ay'
+        else:
+            b = i 
+        a.append(b)
+
+    return ' '.join(a)

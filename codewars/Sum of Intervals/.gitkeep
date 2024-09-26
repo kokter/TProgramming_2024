@@ -1,0 +1,15 @@
+def sum_of_intervals(intervals):
+    if not intervals:
+        return 0
+    intervals.sort(key=lambda x: x[0])
+    inter = []
+    a, b = intervals[0]
+    for start, end in intervals[1:]:
+        if start <= b:  
+            b = max(b, end)  
+        else:
+            inter.append([a, b])
+            a, b = start, end
+    inter.append([a, b])
+    summa = sum(end - start for start, end in inter)
+    return summa

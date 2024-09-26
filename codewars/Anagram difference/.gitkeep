@@ -1,0 +1,11 @@
+from collections import Counter
+
+def anagram_difference(w1, w2):
+    count1 = Counter(w1)
+    count2 = Counter(w2)
+    a = 0
+    slovo = set(count1.keys()).union(set(count2.keys()))
+    for i in slovo:
+        a += abs(count1[i] - count2[i])
+    return a
+
