@@ -1,0 +1,6 @@
+from itertools import permutations as perm
+
+def permutations(s):
+    perms = perm(s)
+    unique_perms = set(''.join(p) for p in perms)
+    return list(unique_perms)

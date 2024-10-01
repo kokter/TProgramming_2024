@@ -1,0 +1,10 @@
+def tower_builder(n_floors):
+    max_width = 2 * n_floors - 1
+    tower = []
+    for i in range(n_floors):
+        num_stars = 2 * i + 1
+        num_spaces = (max_width - num_stars) // 2
+        floor_string = ' ' * num_spaces + '*' * num_stars + ' ' * num_spaces
+        tower.append(floor_string)
+    
+    return tower

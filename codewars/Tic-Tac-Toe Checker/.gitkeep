@@ -1,0 +1,22 @@
+def is_solved(board):
+    pass
+    winning_combinations = [
+        [board[0][0], board[0][1], board[0][2]],
+        [board[1][0], board[1][1], board[1][2]],
+        [board[2][0], board[2][1], board[2][2]],
+        [board[0][0], board[1][0], board[2][0]],
+        [board[0][1], board[1][1], board[2][1]],
+        [board[0][2], board[1][2], board[2][2]],
+        [board[0][0], board[1][1], board[2][2]],
+        [board[0][2], board[1][1], board[2][0]],
+    ]
+
+    for combination in winning_combinations:
+        if combination == [1, 1, 1]:
+            return 1
+        elif combination == [2, 2, 2]:
+            return 2
+    for row in board:
+        if 0 in row:
+            return -1
+    return 0

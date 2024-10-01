@@ -1,0 +1,24 @@
+function add(num1, num2) {
+    num1 = num1.split('').reverse().join('');
+    num2 = num2.split('').reverse().join('');
+    
+    let result = '';
+    let carry = 0;
+    let maxLength = Math.max(num1.length, num2.length);
+    
+    for (let i = 0; i < maxLength; i++) {
+        let digit1 = i < num1.length ? parseInt(num1[i]) : 0;
+        let digit2 = i < num2.length ? parseInt(num2[i]) : 0;
+        
+        let sum = digit1 + digit2 + carry;
+        
+        carry = Math.floor(sum / 10);
+        result += (sum % 10).toString();
+    }
+    
+    if (carry > 0) {
+        result += carry.toString();
+    }
+    
+    return result.split('').reverse().join('');
+}
