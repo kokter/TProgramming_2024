@@ -1,31 +1,31 @@
 function snail(array) {
-    let res = [];
+    let listy = [];
     let left = 0;
     let right = array[0].length - 1;
-    let top = 0;
-    let bottom = array.length - 1;
-    while (left <= right && top <= bottom) {
+    let upper = 0;
+    let lower = array.length - 1;
+    while (left <= right && upper <= lower) {
         for (let i = left; i <= right; i++) {
-            res.push(array[top][i]);
+            listy.push(array[upper][i]);
         }
-        top += 1;
-        for (let i = top; i <= bottom; i++) {
-            res.push(array[i][right]);
+        upper += 1;
+        for (let i = upper; i <= lower; i++) {
+            listy.push(array[i][right]);
         }
         right -= 1;
-        if (top <= bottom) {
+        if (upper <= lower) {
             for (let i = right; i >= left; i--) {
-                res.push(array[bottom][i]);
+                listy.push(array[lower][i]);
             }
-            bottom -= 1;
+            lower -= 1;
         }
         if (left <= right) {
-            for (let i = bottom; i >= top; i--) {
-                res.push(array[i][left]);
+            for (let i = lower; i >= upper; i--) {
+                listy.push(array[i][left]);
             }
             left += 1;
         }
     }
 
-    return res;
+    return listy;
 }

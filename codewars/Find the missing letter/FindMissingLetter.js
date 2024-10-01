@@ -1,11 +1,11 @@
 function findMissingLetter(array) {
-    let caseWord = array[0] === array[0].toLowerCase();
+    let vocabulary = array[0] === array[0].toLowerCase();
     array = array.join('').toLowerCase().split('');
-    let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-    let startIndex = alphabet.indexOf(array[0]);
+    let alph = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    let firsrIndex = alph.indexOf(array[0]);
     for (let i = 0; i < array.length; i++) {
-        if (array[i] !== alphabet[startIndex + i]) {
-            return caseWord ? alphabet[startIndex + i] : alphabet[startIndex + i].toUpperCase();
+        if (array[i] !== alph[firsrIndex + i]) {
+            return vocabulary ? alph[firsrIndex + i] : alph[firsrIndex + i].toUpperCase();
         }
     }
     return undefined;

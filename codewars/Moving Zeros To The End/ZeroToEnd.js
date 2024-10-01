@@ -1,15 +1,15 @@
 function moveZeros(arr) {
-    let counter = 0;
-    let newArr = [];
+    let count = 0;
+    let listy = [];
     for (let item of arr) {
         if (item === 0) {
-            counter += 1;
+            count += 1;
         } else {
-            newArr.push(item);
+            listy.push(item);
         }
     }
-    for (let i = 0; i < counter; i++) {
-        newArr.push(0);
+    for (let i = 0; i < count; i++) {
+        listy.push(0);
     }
-    return newArr;
+    return listy;
 }

@@ -1,20 +1,20 @@
 function duplicateEncode(word) {
-    let map = new Map();
+    let scheme = new Map();
     let arr = word.toLowerCase().split("");
     for (let item of arr) {
-        if (map.has(item)) {
-            map.set(item, map.get(item) + 1);
+        if (scheme.has(item)) {
+            scheme.set(item, scheme.get(item) + 1);
         } else {
-            map.set(item, 1);
+            scheme.set(item, 1);
         }
     }
-    let res = [];
+    let listy = [];
     for (let i = 0; i < arr.length; i++) {
-        if (map.get(arr[i]) > 1) {
-            res.push(")");
+        if (scheme.get(arr[i]) > 1) {
+            listy.push(")");
         } else {
-            res.push("(");
+            listy.push("(");
         }
     }
-    return res.join("");
+    return listy.join("");
 }

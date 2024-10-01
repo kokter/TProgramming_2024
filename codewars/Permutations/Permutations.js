@@ -1,8 +1,8 @@
 function permutations(string) {
-    let res = [];
+    let listy = [];
     let perm = (arr, currentArr) => {
         if (arr.length === 0) {
-            res.push(currentArr.join(""));
+            listy.push(currentArr.join(""));
             return;
         }
 
@@ -13,5 +13,5 @@ function permutations(string) {
     };
 
     perm(string.split(""), []);
-    return [...new Set(res)];
+    return [...new Set(listy)];
 }

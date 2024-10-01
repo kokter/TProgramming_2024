@@ -1,24 +1,24 @@
 function anagramDifference(w1, w2) {
-    let freq1 = {};
-    let freq2 = {};
-    let res = 0;
-    for (let char of w1) {
-        freq1[char] = (freq1[char] || 0) + 1;
+    let rate1 = {};
+    let rate2 = {};
+    let listy = 0;
+    for (let sign of w1) {
+      rate1[sign] = (rate1[sign] || 0) + 1;
     }
-    for (let char of w2) {
-        freq2[char] = (freq2[char] || 0) + 1;
+    for (let sign of w2) {
+      rate2[sign] = (rate2[sign] || 0) + 1;
     }
-    for (let char in freq1) {
-        if (freq2[char]) {
-            res += Math.abs(freq1[char] - freq2[char]);
-        } else {
-            res += freq1[char];
-        }
+    for (let sign in rate1) {
+      if (rate2[sign]) {
+        listy += Math.abs(rate1[sign] - rate2[sign]);
+      } else {
+        listy += rate1[sign];
+      }
     }
-    for (let char in freq2) {
-        if (!freq1[char]) {
-            res += freq2[char];
-        }
+    for (let sign in rate2) {
+      if (!rate1[sign]) {
+        listy += rate2[sign];
+      }
     }
-    return res;
-}
+    return listy;
+  }

@@ -1,5 +1,5 @@
 function maxSum(root) {
-    const maxSumRootToLeaf = (node) => {
+    const FromBeginningToEnd = (node) => {
         if (node === null) {
             return 0;
         }
@@ -7,10 +7,10 @@ function maxSum(root) {
             return node.value;
         }
         const leftSum =
-            node.left !== null ? maxSumRootToLeaf(node.left) : -Infinity;
+            node.left !== null ? FromBeginningToEnd(node.left) : -Infinity;
         const rightSum =
-            node.right !== null ? maxSumRootToLeaf(node.right) : -Infinity;
+            node.right !== null ? FromBeginningToEnd(node.right) : -Infinity;
         return node.value + Math.max(leftSum, rightSum);
     };
-    return maxSumRootToLeaf(root);
+    return FromBeginningToEnd(root);
 }

@@ -1,5 +1,5 @@
 function flattenMap(map, parentKey = "") {
-    let flatMap = {};
+    let MapFlat = {};
     for (let key in map) {
         if (map.hasOwnProperty(key)) {
             let newKey = parentKey ? `${parentKey}/${key}` : key;
@@ -8,11 +8,11 @@ function flattenMap(map, parentKey = "") {
                 map[key] !== null &&
                 !Array.isArray(map[key])
             ) {
-                Object.assign(flatMap, flattenMap(map[key], newKey));
+                Object.assign(MapFlat, flattenMap(map[key], newKey));
             } else {
-                flatMap[newKey] = map[key];
+                MapFlat[newKey] = map[key];
             }
         }
     }
-    return flatMap;
+    return MapFlat;
 }

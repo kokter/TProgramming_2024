@@ -1,15 +1,14 @@
 function pigIt(str) {
-    //Code here
     str = str.split(" ");
     let arr = [];
     for (let i = 0; i < str.length; i++) {
-        let newStr = "";
+        let str1 = "";
         if (str[i] === "!" || str[i] === "?") {
-            newStr = str[i].split("").slice(1).concat(str[i][0]);
+            str1 = str[i].split("").slice(1).concat(str[i][0]);
         } else {
-            newStr = str[i].split("").slice(1).concat(str[i][0], "ay");
+            str1 = str[i].split("").slice(1).concat(str[i][0], "ay");
         }
-        arr.push(newStr.join(""));
+        arr.push(str1.join(""));
     }
     return arr.join(" ");
 }
