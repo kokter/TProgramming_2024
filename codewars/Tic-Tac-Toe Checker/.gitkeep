@@ -1,0 +1,34 @@
+def is_solved(board):
+    if there_are_empty_spots(board):
+        return -1
+    return the_result_of_the_game(board)
+
+def there_are_empty_spots(board):
+    for row in board:
+        if 0 in row:
+            return True
+    return False
+
+def the_result_of_the_game(board: tuple):
+    diagonal_1 = {board[i][i] for i in range(len(board))}
+    diagonal_2 = {board[i][len(board) - i - 1] for i in range(len(board))}
+
+    for i in range(3):
+        line = set(board[i])
+        column = {board[j][i] for j in range(3)} 
+        if len(line) == 1 and list(line)[0] != 0:
+            return list(line)[0]
+        elif len(column) == 1 and list(column)[0] != 0:
+            return list(column)[0]
+
+    if len(diagonal_1) == 1 and list(diagonal_1)[0] != 0:
+        return list(diagonal_1)[0]
+    elif len(diagonal_2) == 1 and list(diagonal_2)[0] != 0:
+        return list(diagonal_2)[0]
+
+    return 0  # Ничья
+
+if __name__ == "__main__":
+    import ast
+    board = ast.literal_eval(input("Enter the state of the board (for example, [[1, 2, 0], [0, 1, 2], [2, 1, 0]]): "))
+    print(is_solved(board))

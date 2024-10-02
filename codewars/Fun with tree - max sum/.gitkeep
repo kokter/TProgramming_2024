@@ -1,1 +1,18 @@
+class TreeNode:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
 
+def max_sum(root: TreeNode) -> int:
+    if root is None:
+        return 0
+
+    def max_sum_path(node):
+        if node is None:
+            return 0
+        left_sum = max(max_sum_path(node.left), 0) 
+        right_sum = max(max_sum_path(node.right), 0)
+        return node.value + max(left_sum, right_sum)
+
+    return max_sum_path(root)

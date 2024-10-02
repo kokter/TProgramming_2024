@@ -1,0 +1,16 @@
+def duplicate_encode(word):
+    word = word.lower()
+    letter_count = {}
+
+    for char in word:
+        if char in letter_count:
+            letter_count[char] += 1
+        else:
+            letter_count[char] = 1
+
+    final_string = ''.join('(' if letter_count[char] == 1 else ')' for char in word)
+    
+    return final_string
+
+if __name__ == "__main__":
+    print(duplicate_encode(input("Enter your word: ")))

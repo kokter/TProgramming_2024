@@ -1,0 +1,13 @@
+def product_fib(prod):
+    num_1, num_2 = 0, 1
+
+    while num_1 * num_2 < prod:
+        num_1, num_2 = num_2, num_1 + num_2
+
+    if num_1 * num_2 == prod:
+        return [num_1, num_2, True]
+    else:
+        return [num_1, num_2, False]
+
+if __name__ == "__main__":
+    print(product_fib(int(input()))) 

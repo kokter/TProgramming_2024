@@ -1,0 +1,10 @@
+function mergeArrays(n, m) {
+    let result = [];
+    const minLength = Math.min(n.length, m.length);
+    for (let i = 0; i < minLength; i++) {
+        result.push(n[i]);  
+        result.push(m[i]);  
+    }
+    result = result.concat(n.length > m.length ? n.slice(minLength) : m.slice(minLength));
+    return result;
+}
