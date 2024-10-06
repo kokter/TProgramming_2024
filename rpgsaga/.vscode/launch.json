@@ -9,14 +9,14 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}\\saga\\src\\index.ts",
+      "program": "${workspaceFolder}\\src\\index.ts",
       "outFiles": ["${workspaceFolder}/**/*.js"]
     },
     {
       "type": "node",
       "request": "launch",
       "name": "Tests debug",
-      "program": "${workspaceRoot}/saga/node_modules/jest/bin/jest.js",
+      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
       "args": ["-i"],
       "skipFiles": ["<node_internals>/**/*.js", "node_modules"]
     }
