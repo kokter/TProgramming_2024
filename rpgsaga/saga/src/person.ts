@@ -1,4 +1,4 @@
-class person {
+class Person {
   private _name: string;
   private _sex: string;
   private _age: number;
@@ -55,4 +55,4 @@ class person {
   }
 }
 
-export { person };
+export { Person };

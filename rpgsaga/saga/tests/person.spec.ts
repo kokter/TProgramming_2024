@@ -1,14 +1,14 @@
-import { person } from '../src/person';
+import { Person } from '../src/person';
 
 describe('Fox class methods tests', () => {
   it('Constructor test', () => {
-    let newPerson = new person('TestPerson', 20, 'Male');
+    let newPerson = new Person('TestPerson', 20, 'Male');
     expect(newPerson.age == 20);
     expect(newPerson.name == 'TestPerson');
     expect(newPerson.sex == 'Male');
   });
   describe('Get methods tests', () => {
-    let newPerson = new person('TestPerson', 20, 'Male');
+    let newPerson = new Person('TestPerson', 20, 'Male');
     it('Age get test', () => {
       expect(newPerson.age == 20);
     });
@@ -20,7 +20,7 @@ describe('Fox class methods tests', () => {
     });
   });
   describe('Set methods tests', () => {
-    let newPerson = new person('TestPerson', 20, 'Male');
+    let newPerson = new Person('TestPerson', 20, 'Male');
     it('Age basic test', () => {
       newPerson.age = 35;
       expect(newPerson.age == 35);
@@ -45,7 +45,7 @@ describe('Fox class methods tests', () => {
     });
   });
   describe('Other methods tests', () => {
-    let newPerson = new person('John', 20, 'Male');
+    let newPerson = new Person('John', 20, 'Male');
     it('Should return name and sex', () => {
       expect(newPerson.toString() == `${newPerson.name} ${newPerson.sex}`);
     });
