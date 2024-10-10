@@ -1,6 +1,6 @@
 import { Person } from '../src/person';
 
-describe('Fox class methods tests', () => {
+describe('Person class methods tests', () => {
   it('Constructor test', () => {
     let newPerson = new Person('TestPerson', 20, 'Male');
     expect(newPerson.age == 20);
