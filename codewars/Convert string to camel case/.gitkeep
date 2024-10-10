@@ -1,0 +1,9 @@
+def to_camel_case(text):
+    ctr = text.replace("_", " ").replace("-", " ")
+    ctr = ctr.split()
+    if len(text) == 0:
+        return text
+    return ctr[0] + ''.join(i.capitalize() for i in ctr[1:])
+
+if __name__ == '__main__':
+    print(to_camel_case(input()))

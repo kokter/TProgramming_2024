@@ -1,0 +1,14 @@
+def sum_pairs(ints, s):
+    seen = set()
+    for number in ints:
+        target = s - number
+        if target in seen:
+            return [target, number]
+        seen.add(number) 
+    return None
+
+if __name__ == "__main__":
+    import ast
+    ints = ast.literal_eval(input("Введите список чисел: "))
+    s = int(input("Введите сумму: "))
+    print(sum_pairs(ints, s))

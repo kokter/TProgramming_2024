@@ -1,0 +1,13 @@
+def move_zeros(lst):
+    non_zero_index = 0
+    for el in lst:
+        if el != 0:
+            lst[non_zero_index] = el
+            non_zero_index += 1
+    for i in range(non_zero_index, len(lst)):
+        lst[i] = 0
+    return lst
+
+if __name__ == "__main__":
+    input_list = list(map(int, input().split()))
+    print(move_zeros(input_list))

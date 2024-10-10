@@ -1,0 +1,10 @@
+ef find_missing_letter(chars):
+   
+    full_set = set(chr(i) for i in range(ord(chars[0]), ord(chars[-1]) + 1))
+    chars_set = set(chars)
+    missing_chars = full_set - chars_set
+    return missing_chars.pop() if missing_chars else ""
+
+if __name__ == "__main__":
+    input_chars = input("Enter letters: ")
+    print(find_missing_letter(input_chars))
